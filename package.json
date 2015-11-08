@@ -1,0 +1,23 @@
+{
+  "name": "appquiz",
+  "version": "0.0.1",
+  "description": "Aplicacion web cuestionario online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alu0100536652/STW07.git"
+  },
+  "keywords": [
+    "express",
+    "nodejs"
+  ],
+  "author": "David Carlos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alu0100536652/STW07/issues"
+  },
+  "homepage": "https://github.com/alu0100536652/STW07#readme"
+}
