@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="one-half column">
+            <h5>Pregunta de <%= type %></h5>
+            <form action="/question" method="post">
+                <h5><b><%= question %></b></h5>
+                <input class="buttonResponse" name="response" type="submit" value="<%= response1 %>"><br>
+                <input class="buttonResponse" name="response" type="submit" value="<%= response2 %>"><br>
+                <input class="buttonResponse" name="response" type="submit" value="<%= response3 %>"><br>
+                <input class="buttonResponse" name="response" type="submit" value="<%= response4 %>"><br>
+            </form>
+        </div>
+        <div class="one-half column">
+            <h5>Tiempo</h5>
+            <span></span>
+        </div>
+    </div>
+</div>
