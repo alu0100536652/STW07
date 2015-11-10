@@ -8,5 +8,5 @@ exports.question = function(req, res, next) {
 
 exports.check = function(req, res, next) {
     console.log(req.body.response)
-  res.render('partials/start');
+  res.redirect('/');
 };
