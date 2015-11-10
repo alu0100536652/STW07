@@ -7,6 +7,17 @@ exports.question = function(req, res, next) {
 };
 
 exports.check = function(req, res, next) {
-    console.log(req.body.response)
-  res.redirect('/');
+  console.log(req.body.response)
+  res.redirect('/result');
+};
+
+exports.result = function(req, res, next) {
+  console.log("Respuesta: " + req.body.response);
+  console.log("Tiempo: " + req.body.time);
+  var puntos;
+  if ((req.body.time != undefined)&&(req.body.response == 'Madrid'))
+    puntos = req.body.time;
+  else
+    puntos = 0;
+  res.render('partials/result',{result: puntos});
 };
