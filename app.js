@@ -1,6 +1,7 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser'),
     expressLayouts = require('express-ejs-layouts'),
     path = require('path'),
     routes = require('./routes/index'),
@@ -18,6 +19,7 @@ app.set('view engine', 'ejs');
 app.set('layout', 'layout');
 app.use(expressLayouts);
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 
 app.use('/', routes);
