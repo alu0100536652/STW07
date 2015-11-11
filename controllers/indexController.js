@@ -1,13 +1,14 @@
 var QuizModule = require('../models/questionModel'),
-    question = new QuizModule.Quiz();
+    question;
     
 exports.index = function(req, res, next) {
   res.render('partials/start');
 };
 
 exports.question = function(req, res, next) {
-  console.log(question);
-  res.render('partials/question',question);
+  question = new QuizModule.Quiz();
+  console.log(question.question());
+  res.render('partials/question',question.question());
 };
 
 exports.result = function(req, res, next) {
@@ -15,7 +16,7 @@ exports.result = function(req, res, next) {
   console.log("Tiempo: " + req.body.time);
   var puntos;
   var aciertos = 0;
-  if ((req.body.time != undefined)&&(req.body.response == question['result']))
+  if ((req.body.time != undefined)&&(req.body.response == question.check(req.body.id)))
   {
     puntos = req.body.time;
     aciertos++;
