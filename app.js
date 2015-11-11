@@ -5,6 +5,8 @@ var express = require('express'),
     expressLayouts = require('express-ejs-layouts'),
     path = require('path'),
     routes = require('./routes/index'),
+    routesTrivial = require('./routes/trivial'),
+    routesQuestion = require('./routes/question'),
     routesAbout = require('./routes/about');
 
 //Statics Files
@@ -23,6 +25,8 @@ app.use(cookieParser());
 
 
 app.use('/', routes);
+app.use('/trivial', routesTrivial);
+app.use('/trivial', routesQuestion);
 app.use('/about', routesAbout);
 
 

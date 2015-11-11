@@ -3,8 +3,5 @@ var express = require('express'),
     indexControllerModule = require('../controllers/indexController');
 
 router.get('/', indexControllerModule.index);
-router.get('/question', indexControllerModule.question);
-router.post('/question', indexControllerModule.result);
-router.post('/question', indexControllerModule.result);
 
 module.exports = router;
