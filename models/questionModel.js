@@ -9,16 +9,19 @@
         {id: 6, type:"Arte y Literatura", question:"¿Quién pintó La Capilla Sixtina?",response1: "Giorgio Vasari",response2: "Leonardo Da Vinci",response3: "Miguel Ángel",response4: "Tiziano", result: "Miguel Ángel"}
     ];
     
-    function Quiz(id) {
-        this.id = id || 0;
-        this.question = function() {
-            return quizCollection[this.id];
+    function Quiz() {
+        this.question = function(id) {
+            return quizCollection[id];
         }
         this.check = function(questionId) {
             for (var i = 0; i < quizCollection.length; i++) 
                 if (quizCollection[i].id == questionId)
                     return quizCollection[i].result;
-        };
+        }
+        this.allQuestions = function()
+        {
+            return quizCollection;
+        }
     }
     
     exports.Quiz = Quiz;

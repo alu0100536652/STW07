@@ -14,8 +14,8 @@ exports.trivial = function(req, res, next) {
   else
     id = 0;
     
-  question = new QuizModule.Quiz(id);
-  res.render('partials/trivial',question.question());
+  question = new QuizModule.Quiz();
+  res.render('partials/trivial', question.question(id));
 };
 
 exports.result = function(req, res, next) {

@@ -4,6 +4,7 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     expressLayouts = require('express-ejs-layouts'),
     path = require('path'),
+    helpers = require('express-helpers')(app),
     routes = require('./routes/index'),
     routesTrivial = require('./routes/trivial'),
     routesQuestion = require('./routes/question'),
@@ -11,6 +12,7 @@ var express = require('express'),
 
 //Statics Files
 app.use(express.static(__dirname + '/public'));
+app.use('/question', express.static(__dirname + '/public'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,7 +28,7 @@ app.use(cookieParser());
 
 app.use('/', routes);
 app.use('/trivial', routesTrivial);
-app.use('/trivial', routesQuestion);
+app.use('/question', routesQuestion);
 app.use('/about', routesAbout);
 
 
