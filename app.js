@@ -12,7 +12,7 @@ var express = require('express'),
 
 //Statics Files
 app.use(express.static(__dirname + '/public'));
-app.use('/question', express.static(__dirname + '/public'));
+app.use('/questions', express.static(__dirname + '/public'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,7 +28,7 @@ app.use(cookieParser());
 
 app.use('/', routes);
 app.use('/trivial', routesTrivial);
-app.use('/question', routesQuestion);
+app.use('/questions', routesQuestion);
 app.use('/about', routesAbout);
 
 
