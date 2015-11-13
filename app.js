@@ -12,7 +12,6 @@ var express = require('express'),
 
 //Statics Files
 app.use(express.static(__dirname + '/public'));
-app.use('/questions', express.static(__dirname + '/public'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
